@@ -1,0 +1,321 @@
+% ==================== PACKAGE IMPORTS ====================
+% Mathematics
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{derivative}
+
+% Graphics and Figures
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{intersections, angles, quotes, positioning, arrows.meta}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+% Layout and Formatting
+\usepackage[margin=3cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{multicol}
+\usepackage{multirow}
+
+% Tables and Arrays
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[table, dvipsnames]{xcolor}
+
+% Lists
+\usepackage{enumitem}
+
+% Units and Symbols
+\usepackage{textcomp, gensymb}
+\usepackage[per-mode=symbol]{siunitx}
+
+% Utilities
+\usepackage{etoolbox}
+\usepackage{ifthen}
+\usepackage{xstring}
+\usepackage{pgffor}
+
+% Colored Boxes
+\usepackage[many]{tcolorbox}
+\usepackage{thmtools}
+\usepackage[framemethod=TikZ]{mdframed}
+
+% Algorithms
+\usepackage[linesnumbered,lined,vlined,ruled,commentsnumbered,resetcount,algochapter]{algorithm2e}
+
+% Polynomials
+\usepackage{polynom}
+
+% Hyperlinks (load last)
+\usepackage[colorlinks=true,linkcolor=cyan,urlcolor=magenta,citecolor=violet]{hyperref}
+\urlstyle{same}
+
+% ==================== PDF SETTINGS ====================
+\pdfsuppresswarningpagegroup=1
+
+% ==================== PAGE STYLE ====================
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyfoot[C]{\thepage}
+
+% ==================== COLOR DEFINITIONS ====================
+\definecolor{correct}{HTML}{009900}
+
+% ==================== CUSTOM COMMANDS ====================
+% Correction markup
+\newcommand\correct[2]{\ensuremath{\:}{\color{red}{#1}}\ensuremath{\to}{\color{correct}{#2}}\ensuremath{\:}}
+\newcommand\green[1]{{\color{correct}{#1}}}
+
+% Derivatives
+\newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\ddxd}{\frac{\mathrm{d}}{\mathrm{d}x}}
+\newcommand{\dydx}{\frac{dy}{dx}}
+
+% ==================== TIKZ STYLES ====================
+\tikzset{
+	force/.style={thick, {Circle[length=2pt]}-stealth, shorten <=-1pt}
+}
+
+% ==================== ALGORITHM SETTINGS ====================
+\SetKwComment{Comment}{// }{}
+\SetArgSty{textsl}
+\def\algocflineautorefname{Algorithm}
+
+% Clear item autoref name
+\makeatletter
+\def\itemautorefname{\@gobble}
+\makeatother
+
+% ==================== THEOREM STYLES ====================
+\mdfsetup{skipabove=1em,skipbelow=0em}
+
+% Green box (Definitions)
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{ForestGreen!70!black},
+	bodyfont=\normalfont,
+	mdframed={
+		linewidth=2pt,
+		rightline=false, topline=false, bottomline=false,
+		linecolor=ForestGreen, backgroundcolor=ForestGreen!5,
+		nobreak=false
+	}
+]{thmgreenbox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{ForestGreen!70!black},
+	bodyfont=\normalfont,
+	mdframed={
+		linewidth=2pt,
+		rightline=false, topline=false, bottomline=false,
+		linecolor=ForestGreen, backgroundcolor=ForestGreen!8,
+		nobreak=false
+	}
+]{thmgreen2box}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{SeaGreen!70!black},
+	bodyfont=\normalfont,
+	mdframed={
+		linewidth=2pt,
+		rightline=false, topline=false, bottomline=false,
+		linecolor=SeaGreen, backgroundcolor=SeaGreen!2,
+		nobreak=false
+	}
+]{thmgreen3box}
+
+% Blue box (Examples, Claims)
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{NavyBlue!70!black},
+	bodyfont=\normalfont,
+	mdframed={
+		linewidth=2pt,
+		rightline=false, topline=false, bottomline=false,
+		linecolor=NavyBlue, backgroundcolor=NavyBlue!5,
+		nobreak=false
+	}
+]{thmbluebox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{MidnightBlue!70!black},
+	bodyfont=\normalfont,
+	mdframed={
+		linewidth=2pt,
+		rightline=false, topline=false, bottomline=false,
+		linecolor=MidnightBlue, backgroundcolor=MidnightBlue!5,
+		nobreak=false
+	}
+]{thmblue2box}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{TealBlue!70!black},
+	bodyfont=\normalfont,
+	mdframed={
+		linewidth=2pt,
+		rightline=false, topline=false, bottomline=false,
+		linecolor=TealBlue,
+		nobreak=false
+	}
+]{thmblueline}
+
+% Red box (Theorems, Lemmas, Propositions)
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{RawSienna!70!black},
+	bodyfont=\normalfont,
+	mdframed={
+		linewidth=2pt,
+		rightline=false, topline=false, bottomline=false,
+		linecolor=RawSienna, backgroundcolor=RawSienna!5,
+		nobreak=false
+	}
+]{thmredbox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{RawSienna!70!black},
+	bodyfont=\normalfont,
+	mdframed={
+		linewidth=2pt,
+		rightline=false, topline=false, bottomline=false,
+		linecolor=RawSienna, backgroundcolor=RawSienna!8,
+		nobreak=false
+	}
+]{thmred2box}
+
+% Pink box (Problems, Exercises)
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{WildStrawberry!70!black},
+	bodyfont=\normalfont,
+	mdframed={
+		linewidth=2pt,
+		rightline=false, topline=false, bottomline=false,
+		linecolor=WildStrawberry, backgroundcolor=WildStrawberry!5,
+		nobreak=false
+	}
+]{thmpinkbox}
+
+% Purple box (Conjectures)
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{Violet!70!black},
+	bodyfont=\normalfont,
+	mdframed={
+		linewidth=2pt,
+		rightline=false, topline=false, bottomline=false,
+		linecolor=Violet, backgroundcolor=Violet!1,
+		nobreak=false
+	}
+]{conjpurplebox}
+
+% Gray box (Notes, Notation)
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{Gray!70!black},
+	bodyfont=\normalfont,
+	mdframed={
+		linewidth=2pt,
+		rightline=false, topline=false, bottomline=false,
+		linecolor=Gray, backgroundcolor=Gray!5,
+		nobreak=false
+	}
+]{notgraybox}
+
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{Gray!70!black},
+	bodyfont=\normalfont,
+	mdframed={
+		linewidth=2pt,
+		rightline=false, topline=false, bottomline=false,
+		linecolor=Gray,
+		nobreak=false
+	}
+]{notgrayline}
+
+% Explanation box
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{NavyBlue!70!black},
+	bodyfont=\normalfont,
+	numbered=no,
+	mdframed={
+		linewidth=2pt,
+		rightline=false, topline=false, bottomline=false,
+		linecolor=NavyBlue, backgroundcolor=NavyBlue!1,
+		nobreak=false
+	}
+]{thmexplanationbox}
+
+% Answer box
+\declaretheoremstyle[
+	headfont=\bfseries\sffamily\color{WildStrawberry!70!black},
+	bodyfont=\normalfont,
+	numbered=no,
+	mdframed={
+		linewidth=2pt,
+		rightline=false, topline=false, bottomline=false,
+		linecolor=WildStrawberry, backgroundcolor=WildStrawberry!1,
+		nobreak=false
+	}
+]{thmanswerbox}
+
+% ==================== THEOREM DECLARATIONS ====================
+\declaretheorem[style=thmgreenbox, name=Definition, numberwithin=section]{definition}
+\declaretheorem[style=thmgreen2box, name=Definition, numbered=no]{definition*}
+\declaretheorem[style=thmredbox, name=Theorem, numberwithin=section]{theorem}
+\declaretheorem[style=thmred2box, name=Theorem, numbered=no]{theorem*}
+\declaretheorem[style=thmredbox, name=Lemma, numberwithin=section]{lemma}
+\declaretheorem[style=thmredbox, name=Proposition, numberwithin=section]{proposition}
+\declaretheorem[style=thmredbox, name=Corollary, numberwithin=section]{corollary}
+\declaretheorem[style=thmpinkbox, name=Problem, numberwithin=section]{problem}
+\declaretheorem[style=thmpinkbox, name=Problem, numbered=no]{problem*}
+\declaretheorem[style=thmblue2box, name=Claim, numbered=no]{claim}
+\declaretheorem[style=conjpurplebox, name=Conjecture, numberwithin=section]{conjecture}
+\declaretheorem[style=thmbluebox, numbered=no, name=Example]{eg}
+\declaretheorem[style=thmblueline, numbered=no, name=Remark]{remark}
+\declaretheorem[style=thmblueline, numbered=no, name=Note]{note}
+\declaretheorem[style=thmpinkbox, numbered=no, name=Exercise]{exercise}
+\declaretheorem[style=notgrayline, numbered=no, name=As previously seen]{prev}
+\declaretheorem[style=thmgreen3box, numbered=no, name=Intuition]{intuition}
+\declaretheorem[style=notgraybox, numbered=no, name=Notation]{notation}
+
+% ==================== HYPERREF FIXES ====================
+\renewcommand\theHdefinition{\thesection.\arabic{definition}}
+\renewcommand\theHtheorem{\thesection.\arabic{theorem}}
+\renewcommand\theHlemma{\thesection.\arabic{lemma}}
+\renewcommand\theHproposition{\thesection.\arabic{proposition}}
+\renewcommand\theHcorollary{\thesection.\arabic{corollary}}
+\renewcommand\theHproblem{\thesection.\arabic{problem}}
+\renewcommand\theHconjecture{\thesection.\arabic{conjecture}}
+
+% ==================== CUSTOM PROOF ENVIRONMENT ====================
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{\par
+	\pushQED{\qed}%
+	\normalfont \topsep-2\p@\@plus6\p@\relax
+	\trivlist
+	\item[\hskip\labelsep
+		\color{RawSienna!70!black}\sffamily\bfseries
+		#1\@addpunct{.}]\ignorespaces
+	\begin{mdframed}[linewidth=2pt,rightline=false, topline=false, bottomline=false,linecolor=RawSienna, backgroundcolor=RawSienna!1]
+}{%
+	\popQED\endtrivlist\@endpefalse
+	\end{mdframed}
+}
+\makeatother
+
+\renewcommand{\qed}{\null\hfill\(\blacksquare\)}
+
+% ==================== EXPLANATION ENVIRONMENT ====================
+\declaretheorem[style=thmexplanationbox, numbered=no, name=Proof]{tmpexplanation}
+\newenvironment{explanation}[1][]{\vspace{-10pt}\pushQED{\(\circledast\)}\begin{tmpexplanation}}{\null\hfill\popQED\end{tmpexplanation}}
+
+% ==================== ANSWER ENVIRONMENT ====================
+\declaretheorem[style=thmanswerbox, numbered=no, name=Answer]{tmpanswer}
+\newenvironment{answer}[1][]{\vspace{-10pt}\pushQED{\(\circledast\)}\begin{tmpanswer}}{\null\hfill\popQED\end{tmpanswer}}
+
+% ==================== UTILITY COMMANDS ====================
+% Loop through and input unit files
+\newcommand{\units}[2]{%
+	\foreach \c in {#1,...,#2}{%
+		\IfFileExists{Units/unit_\c.tex}{%
+			\input{Units/unit_\c.tex}%
+			\clearpage
+		}{}
+	}
+}

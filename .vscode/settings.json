@@ -1,0 +1,5 @@
+{
+    "editor.defaultFormatter": "James-Yu.latex-workshop",
+    "editor.experimentalGpuAcceleration": "on",
+    "terminal.integrated.gpuAcceleration": "on"
+}

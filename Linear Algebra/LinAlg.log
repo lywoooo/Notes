@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.22)  27 NOV 2025 19:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.11.22)  5 DEC 2025 12:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/VS Code/Notes/Template/text"
-(c:/VS Code/Notes/Template/text.tex
+**"c:/VS Code/Notes/Linear Algebra/LinAlg"
+(c:/VS Code/Notes/Linear Algebra/LinAlg.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
 (c:/texlive/2025/texmf-dist/tex/latex/base/report.cls
@@ -1007,8 +1007,8 @@ Package: thmdef-mdframed 2023/05/04 v0.76
 \c@conjecture=\count410
 )
 Package translations Info: No language package found. I am going to use `english' as default language. on input line 9.
- (./text.aux)
-\openout1 = `text.aux'.
+ (./LinAlg.aux)
+\openout1 = `LinAlg.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
@@ -1098,9 +1098,9 @@ File: translations-basic-dictionary-english.trsl (english translation file `tran
 )
 Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 9.
 Package hyperref Info: Link coloring ON on input line 9.
- (./text.out) (./text.out)
+ (./LinAlg.out) (./LinAlg.out)
 \@outlinefile=\write4
-\openout4 = `text.out'.
+\openout4 = `LinAlg.out'.
 
 LaTeX Font Info:    Trying to load font information for U+msa on input line 11.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1111,57 +1111,67 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 11.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./text.toc)
-\tf@toc=\write5
-\openout5 = `text.toc'.
-
-
+{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.14 \chapter
-             {Chapter 1} [1
+l.18 \end{abstract}
+                    [1] (./LinAlg.toc)
+\tf@toc=\write5
+\openout5 = `LinAlg.toc'.
+
+ (./Units/unit_1.tex
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.1 \chapter
+            {Systems of Linear Equations and Matrices} [1
 
 ]
 Chapter 1.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 15.
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 15.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 19.
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 19.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 23.
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 27.
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input line 27.
-[2
+) [2
 
-] (./text.aux)
+] (./Units/unit_2.tex
+Chapter 2.
+) [3
+
+
+] (./Units/unit_3.tex
+Chapter 3.
+) [4
+
+
+] (./Units/unit_4.tex
+Chapter 4.
+) [5
+
+
+] (./Units/unit_5.tex
+Chapter 5.
+) [6
+
+
+] (./LinAlg.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-11-06>
  ***********
-Package rerunfilecheck Info: File `text.out' has not changed.
-(rerunfilecheck)             Checksum: 83070A65BC3C251150A9D158CB2730BD;91.
+Package rerunfilecheck Info: File `LinAlg.out' has not changed.
+(rerunfilecheck)             Checksum: 01AB0B138D52A7EBB6A866952832CC44;843.
  ) 
 Here is how much of TeX's memory you used:
- 46657 strings out of 467538
- 1147723 string characters out of 5423724
- 1674156 words of memory out of 5000000
- 74864 multiletter control sequences out of 15000+600000
- 638510 words of font info for 80 fonts, out of 8000000 for 9000
+ 46509 strings out of 467538
+ 1143510 string characters out of 5423724
+ 1667985 words of memory out of 5000000
+ 74704 multiletter control sequences out of 15000+600000
+ 635199 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 89i,10n,107p,770b,1097s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on text.pdf (3 pages, 87116 bytes).
+ 89i,7n,107p,778b,1135s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on LinAlg.pdf (8 pages, 73553 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
- 55 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 99 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
+ 13 named destinations out of 1000 (max. 500000)
+ 53 words of extra memory for PDF output out of 10000 (max. 10000000)
 
